@@ -10,6 +10,9 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+
+  // With Dependency
+
   useEffect(() => {
     setFormIsValid(
       enteredEmail.includes('@') && enteredPassword.trim().length > 6

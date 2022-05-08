@@ -7,7 +7,7 @@ import MainHeader from './components/MainHeader/MainHeader';
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
-
+// Without Dependency
   useEffect(() => {
      if( localStorage.getItem('isLoggedIn') === '1'){
       setIsLoggedIn(true);

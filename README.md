@@ -4,6 +4,6 @@
 
 `useSideEffect()`
 
-<p> For More Details </p>
+<p> For More Details Eample useEffects function used : <strong>Based on Dependency</strong> and <strong>Without Dependency</strong></p>
 
 https://reactjs.org/docs/hooks-effect.html
