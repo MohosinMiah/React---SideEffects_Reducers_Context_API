@@ -11,13 +11,28 @@ const Login = (props) => {
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
 
-  // With Dependency
+  // With Dependency and example Of Cleanup  
+  // This way we reduce the use sideeffects for every keystrock while we take user input .
+  // So,If we use API request we just send one times , not for every keystocks that will increase the network traffic
 
   useEffect(() => {
-    setFormIsValid(
-      enteredEmail.includes('@') && enteredPassword.trim().length > 6
-    );
-  },[ enteredPassword, enteredPassword ]);
+    
+    const identifyer = setTimeout(() => {
+
+      console.log('Checking Form Validity !');
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+
+    },500);
+    return () => {
+
+      console.log('Clean UP');
+      clearTimeout(identifyer);
+      
+    }
+
+  },[ enteredEmail, enteredPassword ]);
 
 
   const emailChangeHandler = (event) => {
