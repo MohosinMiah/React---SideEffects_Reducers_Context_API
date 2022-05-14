@@ -36,3 +36,5 @@ useEffect(() => {
 
 },[ enteredEmail, enteredPassword ]);
 `
+
+## Building and Using a Custom Context Provider. So that we can use all functions and data in a seperate file
