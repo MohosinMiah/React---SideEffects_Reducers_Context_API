@@ -1,4 +1,5 @@
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import AuthContext from '../../store/auth-context';
 
 import Button from '../UI/Button/Button';
 import Card from '../UI/Card/Card';
@@ -10,6 +11,8 @@ const Login = (props) => {
   const [enteredPassword, setEnteredPassword] = useState('');
   const [passwordIsValid, setPasswordIsValid] = useState();
   const [formIsValid, setFormIsValid] = useState(false);
+
+  const ctx = useContext( AuthContext ); // use useContext hook
 
   // With Dependency and example Of Cleanup  
   // This way we reduce the use sideeffects for every keystrock while we take user input .
@@ -57,7 +60,7 @@ const Login = (props) => {
 
   const submitHandler = (event) => {
     event.preventDefault();
-    props.onLogin(enteredEmail, enteredPassword);
+    ctx.onLogin(enteredEmail, enteredPassword);
   };
 
   return (

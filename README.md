@@ -13,3 +13,26 @@ https://reactjs.org/docs/hooks-effect.html
 <p> We can use React Context API two way </P>
 <p>Provider and Consumer</p>
 <p>Useing useContext Hock</p>
+
+## Code snap for Send Request or validate for user inputs : `useEffects`
+
+`
+useEffect(() => {
+
+    const identifyer = setTimeout(() => {
+
+      console.log('Checking Form Validity !');
+      setFormIsValid(
+        enteredEmail.includes('@') && enteredPassword.trim().length > 6
+      );
+
+    },500);
+    return () => {
+
+      console.log('Clean UP');
+      clearTimeout(identifyer);
+
+    }
+
+},[ enteredEmail, enteredPassword ]);
+`
