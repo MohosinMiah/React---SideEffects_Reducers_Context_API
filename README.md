@@ -38,3 +38,12 @@ useEffect(() => {
 `
 
 ## Building and Using a Custom Context Provider. So that we can use all functions and data in a seperate file
+
+This way we can store all the function and variable in a seperate file.
+
+## Where To Use Context API and Props
+
+Context API : Where we need common task or goal.
+Example, logoput method. This method always logout a user.
+
+Props : Example , In a button onClick method event. onClick={method}. method task may vari based on components.
